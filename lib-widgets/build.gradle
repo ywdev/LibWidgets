@@ -1,13 +1,10 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
-
-
-
+    compileSdkVersion 27
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 28
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
@@ -22,8 +19,21 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
-//    im 'com.github.ywdev:LibUtils:v1.0.0'
+//    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
+//    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+//    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+//    androidTestImplementation "com.android.support.test:runner:$rootProject.ext.runnerVersion"
+//    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoCoreVersion"
+//    implementation "com.github.ywdev:LibUtils:$rootProject.ext.LibUtilsVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportLibVersion"
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 }
