@@ -41,6 +41,7 @@ public class CommonTitleBar extends RelativeLayout {
     private RecyclerView mRecyclerView;
 
     private CommonTitleMoreAdapter mAdapter;
+    private Context mContext;
 
     public CommonTitleBar(Context context) {
         this(context,null);
@@ -52,6 +53,7 @@ public class CommonTitleBar extends RelativeLayout {
 
     public CommonTitleBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        this.mContext = context;
         TypedArray ta = null;
         try {
             ta = context.obtainStyledAttributes(attrs, R.styleable.CommonTitleBar,0,0);
@@ -97,9 +99,7 @@ public class CommonTitleBar extends RelativeLayout {
         showDivider(mShowDivider);
         showBack(mShowBack);
         setImmersiveStatusBar(immersiveStatusBar);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(
-                getContext(), LinearLayoutManager.HORIZONTAL, true);
-        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL,false));
         mAdapter = new CommonTitleMoreAdapter(R.layout.item_title_more_action);
         mRecyclerView.setAdapter(mAdapter);
     }
