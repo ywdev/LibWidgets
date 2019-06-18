@@ -58,7 +58,7 @@ public class CommonTitleBar extends RelativeLayout {
         try {
             ta = context.obtainStyledAttributes(attrs, R.styleable.CommonTitleBar,0,0);
             mTitleText = ta.getString(R.styleable.CommonTitleBar_titleText);
-            mBackImg = ta.getInt(R.styleable.CommonTitleBar_backImg,-1);
+            mBackImg = ta.getResourceId(R.styleable.CommonTitleBar_backImg,-1);
             mBackText = ta.getString(R.styleable.CommonTitleBar_backText);
             mShowBack = ta.getBoolean(R.styleable.CommonTitleBar_showBack,true);
             mShowDivider = ta.getBoolean(R.styleable.CommonTitleBar_showDivider,false);
@@ -89,27 +89,26 @@ public class CommonTitleBar extends RelativeLayout {
     }
 
     private void afterInit() {
-        tvTitle.setText(mTitleText);
-        if(mBackImg!=-1){
-            ivBack.setImageDrawable(getResources().getDrawable(mBackImg));
-        }
-//        llTitleBack.setVisibility(mShowBack? VISIBLE:GONE);
-        llTitleBack.setOnClickListener(v -> goBack());
+        setBackImg(mBackImg);
+        setTitleText(mTitleText);
         showBackText(mBackText);
         showDivider(mShowDivider);
         showBack(mShowBack);
         setImmersiveStatusBar(immersiveStatusBar);
+        llTitleBack.setOnClickListener(v -> goBack());
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL,false));
         mAdapter = new CommonTitleMoreAdapter(R.layout.item_title_more_action);
         mRecyclerView.setAdapter(mAdapter);
     }
 
-
     /**
-     * 默认返回
+     * 设置返回图标
+     * @param mBackImg
      */
-    private void goBack() {
-        ((Activity) getContext()).finish();
+    public void setBackImg(int mBackImg) {
+        if(mBackImg!=-1){
+            ivBack.setImageDrawable(getResources().getDrawable(mBackImg));
+        }
     }
 
     /**
@@ -140,7 +139,11 @@ public class CommonTitleBar extends RelativeLayout {
         }
     }
 
-    private void showBack(boolean mShowBack) {
+    /**
+     * 是否显示返回按钮
+     * @param mShowBack
+     */
+    public void showBack(boolean mShowBack) {
         if(mShowBack){
             llTitleBack.setVisibility(VISIBLE);
         }else {
@@ -178,6 +181,13 @@ public class CommonTitleBar extends RelativeLayout {
      */
     public void setTitleText(CharSequence titleText){
         this.tvTitle.setText(titleText);
+    }
+
+    /**
+     * 默认返回
+     */
+    private void goBack() {
+        ((Activity) getContext()).finish();
     }
 
     /**

@@ -12,6 +12,9 @@
         android:layout_height="wrap_content"
         app:titleText="Hello"
         app:barStyle="centerBar"
-        app:showBack="false"
+        app:showBack="true"
+        app:showDivider="true"
+        app:backImg="@drawable/icon_title_back_b"
+        app:backText="返回"
         />
 </LinearLayout>
