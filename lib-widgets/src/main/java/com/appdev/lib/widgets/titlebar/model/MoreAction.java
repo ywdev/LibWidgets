@@ -1,4 +1,4 @@
-package com.appdev.lib.widgets.title.model;
+package com.appdev.lib.widgets.titlebar.model;
 
 public class MoreAction {
     private String name;

@@ -1,4 +1,4 @@
-package com.appdev.lib.widgets.title;
+package com.appdev.lib.widgets.titlebar;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,9 +17,9 @@ import android.widget.TextView;
 
 import com.appdev.lib.utils.DisplayUtils;
 import com.appdev.lib.widgets.R;
-import com.appdev.lib.widgets.title.adapter.CommonTitleMoreAdapter;
-import com.appdev.lib.widgets.title.listener.OnMoreActionItemClickListener;
-import com.appdev.lib.widgets.title.model.MoreAction;
+import com.appdev.lib.widgets.titlebar.adapter.CommonTitleMoreAdapter;
+import com.appdev.lib.widgets.titlebar.listener.OnMoreActionItemClickListener;
+import com.appdev.lib.widgets.titlebar.model.MoreAction;
 
 import java.util.List;
 

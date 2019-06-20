@@ -1,9 +1,9 @@
-package com.appdev.lib.widgets.title.adapter;
+package com.appdev.lib.widgets.titlebar.adapter;
 
 import android.text.TextUtils;
 
 import com.appdev.lib.widgets.R;
-import com.appdev.lib.widgets.title.model.MoreAction;
+import com.appdev.lib.widgets.titlebar.model.MoreAction;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 

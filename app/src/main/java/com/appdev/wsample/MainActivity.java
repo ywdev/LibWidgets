@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.appdev.lib.widgets.title.CommonTitleBar;
-import com.appdev.lib.widgets.title.listener.OnMoreActionItemClickListener;
-import com.appdev.lib.widgets.title.model.MoreAction;
+import com.appdev.lib.widgets.titlebar.CommonTitleBar;
+import com.appdev.lib.widgets.titlebar.listener.OnMoreActionItemClickListener;
+import com.appdev.lib.widgets.titlebar.model.MoreAction;
 
 import java.util.ArrayList;
 import java.util.List;

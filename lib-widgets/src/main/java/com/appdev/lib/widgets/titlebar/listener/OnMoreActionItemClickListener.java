@@ -1,8 +1,8 @@
-package com.appdev.lib.widgets.title.listener;
+package com.appdev.lib.widgets.titlebar.listener;
 
 import android.view.View;
 
-import com.appdev.lib.widgets.title.model.MoreAction;
+import com.appdev.lib.widgets.titlebar.model.MoreAction;
 
 public interface OnMoreActionItemClickListener {
 
